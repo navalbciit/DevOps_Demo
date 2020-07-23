@@ -23,7 +23,7 @@ node{
              sh 'sudo docker login -u "naval2020" -p "naval@123" docker.io'
              //sh 'sudo docker push upasanatestdocker/mysql'
              //sh 'sudo docker push upasanatestdocker/job1_web1.0'
-             sh 'sudo docker push naval2020/naval1_web'
+             sh 'sudo docker push naval2020/naval1_web2'
             // sh 'docker push upasanatestdocker/mysql'
           
     }
