@@ -37,16 +37,21 @@ pipeline {
        
        stage('SCM Checkout')
     {
+        steps {
         git credentialsId: '4cc785e9-441d-4818-a248-2bfb2148004d', url: 'https://github.com/VardhanNS/phpmysql-app.git'
+        } 
     }
     
     stage('Run Docker Compose File')
     {
+        steps {
         sh 'sudo docker-compose build'
         sh 'sudo docker-compose up -d'
+        }
     }
   stage('PUSH image to Docker Hub')
     {
+        steps {
       /* withCredentials([string(credentialsId: 'DockerHubPassword', variable: 'DHPWD')]) 
         {
             sh "docker login -u upasanatestdocker -p ${DHPWD}"
@@ -60,6 +65,7 @@ pipeline {
              //sh 'sudo docker push upasanatestdocker/job1_web1.0'
              sh 'sudo docker push naval2020/naval1_web2'
             // sh 'docker push upasanatestdocker/mysql'
+        }
           
     }
     
